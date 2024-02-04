@@ -29,9 +29,8 @@ jobs:
         ECR_REPOSITORY: a1-dev-mysql
         IMAGE_TAG: v1.0
       run: |
-        ls -ltra clo835_assignment  # Ensure the directory exists
         # Docker build
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f clo835_assignment/Dockerfile_mysql .
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile_mysql .
         # Docker push
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         
@@ -41,8 +40,7 @@ jobs:
         ECR_REPOSITORY: a1-dev-app
         IMAGE_TAG: v1.0
       run: |
-        ls -ltra clo835_assignment  # Ensure the directory exists
         # Docker build
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f clo835_assignment/Dockerfile .
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile .
         # Docker push
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
